@@ -1,11 +1,11 @@
-FROM alpine:3.4
+FROM ubuntu:3.4
 MAINTAINER Wodby <admin@wodby.com>
 
 RUN apk add --no-cache \
         bash \
         tzdata \
         pwgen \
-        mariadb \
+        mariadb-server \
         mariadb-client
 
 ENV BASH_SOURCE /bin/bash
