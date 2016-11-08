@@ -1,7 +1,7 @@
-FROM ubuntu:3.4
+FROM ubuntu
 MAINTAINER Wodby <admin@wodby.com>
 
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
         bash \
         tzdata \
         pwgen \
@@ -23,4 +23,5 @@ VOLUME /var/lib/mysql
 EXPOSE 3306
 
 ENTRYPOINT ["docker-entrypoint.sh"]
+
 CMD ["mysqld"]
